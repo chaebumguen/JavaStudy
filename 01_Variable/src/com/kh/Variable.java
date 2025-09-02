@@ -1,0 +1,97 @@
+package com.kh;
+
+public class Variable {
+	public static void main(String[] args) {
+		printVariable();
+
+		declareVariable();
+	}
+
+	public static void printVariable() {
+		/*
+		 * 변수의 목적 ? 데이터를 저장하기 위한 공간 - 가독성 증가 - 개발자의 실수를 줄일 수 있다 - 재사용성 증가로 유지보수 증가
+		 */
+		// 월급 = 시급 * 근무시간 * 근무일수
+		// 출력형식 -> xxx : 0000원
+		// * 2025년 최저시급 : 10030원
+		int lowestWage = 10230;
+
+		System.out.println("홍길동 : " + (lowestWage * 8 * 5) + "원");
+		System.out.println("아이유 : " + (lowestWage * 6 * 5) + "원");
+		System.out.println("진 : " + (lowestWage * 15 * 28) + "원");
+		System.out.println("유재석 : " + (lowestWage * 20 * 31) + "원");
+	}
+
+	public static void declareVariable() {
+		/*
+		 * 변수 선언 : 값을 저장하기 위한 변수를 메모리 공간에 할당하는 것
+		 * 
+		 * [표현식] 자로형 변수명; - 자료형 : 변수의 크기나 모양을 지정하는 부분 - 변수명 : 변수의 이름을 부여하는 부분(의미있게!) ***
+		 * 명명 규칙 [1] 카멜케이스 : 소문자 시작, 두번째 단어 첫글자 대문자 - 상수 : 스네이크 케이스 (SNAKE_CASE). 모두 대문자
+		 * 작성, 다른 단어는 _로 구분 [2] 예약어 사용 불가 [3] 공백 사용 불가 [4] 특수문자는 _와 $만 사용 가능 [5] 숫자 시작
+		 * 불가 [6] 대소문자 구분, 길이 제한 없음
+		 */
+
+		// 1. 논리형 (boolean) : 논리값을 저장. true, false. 1byte.
+		// true 값을 저장하는 isTrue라는 변수 선언 및 초기화
+		boolean isTrue = true;
+		// false 값을 저장하는 isFalse라는 변수 선언 및 초기화
+		boolean isFalse = false;
+
+		System.out.println("isTrue의 값 : " + isTrue);
+		System.out.println("isFalse의 값 : " + isFalse);
+
+		isTrue = 1 + 3 > 1;
+		System.out.println("isTrue : " + isTrue);
+		// --------------------------------
+		// 2. 숫자 (정수형, 실수형)
+		// 2-1) 정수형 : 딱 떨어지는 수
+		// 2-2) byte(1B) / short(2B) / int(4B) / long(8B)
+		// 자료형 변수 bNum을 선언하고 저장할 수 있는 범위 내의 최소값 저장(-128 ~ 127)
+		byte bNum = -128;
+		System.out.println(bNum);
+
+		// 2-3) 실수형 : 소숫점 o
+		// float (4B) / double (8B)
+
+		// float 자료형 변수 fNum에 0.0을 저장
+		float fNum = 0.0f; // 소숫점 7자리까지 표현 가능 자료형. 값 자체(리터럴)를 저장할 때는 접미사 f/F를 붙임
+		System.out.println(fNum);
+		double dNum = 0.0; // 소숫점 15자리까지 표현 가능. 실수형의 기본자료형
+		System.out.println(dNum);
+
+		// ----------------------------------
+		// 3. 문자형 (char, String)
+		// 3-1) 문자 : char (2B)
+
+		// 'a' 라는 데이터를 저장하는 변수 ch 선언 및 초기화
+		char ch = 'a';
+		System.out.println(ch);
+
+		char kim = '김';
+		System.out.println(kim);
+
+		// 3-2) 문자열 : String (참조자료형)
+
+		// 문자열 변수 str 선언
+		// str 변수에 "안녕하세요" 데이터를 저장(=대입, 할당)
+		String str = "안녕하세요";
+		System.out.println(str);
+
+		// * 문자열의 길이 : 변수명.length()
+		System.out.println("str 데이터 길이 : " + str.length());
+
+		// 상수 : 변하지 않는 값을 저장하는 공간
+		/*
+		 * [표현식] final 자료형 변수명;
+		 */
+		// 최대 허용자 수를 저장하기 위한 상수 선언
+		final int MAX_USERS = 21;
+
+		// 최대 허용자 수를 25로 변경 (불가!)
+		// MAX_USERS = 25; => 재할당 불가
+		
+		// * 대표적인 상수 : 파이(3.141592...)
+		System.out.println(Math.PI);
+	}
+}
